@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Etch A Sketch</h1>
+        </header>    
+        <main class="main">
+            <div class="settings">
+                <input type="color" value="#333333" id="colorPicker">
+                <button id="modeBtn">Color Mode</button>
+                <button id="randomBtn">Random Mode</button>
+                <button id="eraseBtn">Erase</button>
+                <button id="clearBtn">Clear</button>
+                <div class="sizeValue" id="sizeValue">16 x 16</div>
+                <input type="range" min="1" max="64" value="16" id="sizePicker">
+            </div>
+            <div id="grid" class="grid"></div>
+        </main>
+        <footer class="footer">
+            <p class="footer_text">
+                Copyright @ <script>document.write(new Date().getFullYear())</script> Olamilekan Abiola.
+            </p>
+            <a href="https://github.com/Emperordmasac" target="_blank" <i class="fa fa-github"></i>
+            ></a>
+        </footer>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+</html>

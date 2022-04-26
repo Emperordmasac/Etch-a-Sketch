@@ -1,0 +1,49 @@
+const defaultColor = '#333333';
+const defaultMode  = "color";
+const defaultSize = 16;
+
+let color = defaultColor;
+let mode = defaultMode;
+let size = defaultSize;
+
+
+//
+
+//Helper Functions
+//1 function to set color 
+function setColor(newColor) {
+    color = newColor;
+}
+
+//2 function to set mode
+function setMode(newMode)  {
+    mode = newMode;
+}
+
+//3 function to set grid box size
+function setSize(newSize) {
+    size = newSize;
+}
+
+//4 function to update size value in the html
+function updateSizeValue() {
+
+}
+
+//5 function to change the size of the grid box
+function changeSize(newSize) {
+    setSize(newSize);
+    updateSizeValue(newSize);
+
+    //then reload the grid
+
+}
+
+//6 function to clear the grid 
+function clearGrid() {
+
+}
+
+
+//MAIN FUNCTIONS
+//function to setup the grid system

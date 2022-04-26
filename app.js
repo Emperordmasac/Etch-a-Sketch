@@ -105,7 +105,7 @@ function changeColor(e) {
         const randomB = Math.floor(Math.random() * 256);
         e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
     } else if (currentMode === 'erase') {
-        e.target.style.backgroundColor == eraseColor
+        e.target.style.backgroundColor = '#fefefe'
     }
 }
 

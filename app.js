@@ -91,7 +91,21 @@ function setupGridSystem(size) {
 }
 
 //function to changeColor 
-function changeColor() {}
+function changeColor(e) {
+    console.log(`>>>> ${e.type}`)
+
+    if (e.type === 'mouseover' && !mouseDown) return;
+    if (currentMode === 'color') {
+        e.target.style.backgroundColor = currentColor;
+    } else if (currentMode === 'random') {
+        const randomR = Math.floor(math.random() * 256);
+        const randomG = Math.floor(math.random() * 256);
+        const randomB = Math.floor(math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+    } else if (currentMode === 'eraser') {
+        e.target.style.backgroundColor == '#fefefe'
+    }
+}
 
 //onMount 
 window.onload = () => {

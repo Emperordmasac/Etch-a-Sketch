@@ -6,8 +6,15 @@ let color = defaultColor;
 let mode = defaultMode;
 let size = defaultSize;
 
-
-//
+//DOM MANIPULATION
+const colorPallet = document.getElementById("colorPallet");
+const colorMode = document.getElementById("colorMode");
+const randomBtn = document.getElementById('randomBtn');
+const eraseBtn = document.getElementById("eraseBtn");
+const clearBtn = document.getElementById('clearBtn');
+const sizeValue = document.getElementById("sizeValue");
+const sizePicker = document.getElementById("sizePicker");
+const Grid = document.getElementById("grid");
 
 //Helper Functions
 //1 function to set color 

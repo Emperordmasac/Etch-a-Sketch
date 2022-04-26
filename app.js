@@ -5,6 +5,7 @@ const defaultSize = 16;
 let currentColor = defaultColor;
 let currentMode = defaultMode;
 let currentSize = defaultSize;
+let eraseColor = "#fefefe"
 
 //DOM MANIPULATION
 const colorPallet = document.getElementById("colorPallet");
@@ -24,6 +25,7 @@ function setColor(newColor) {
 
 //2 function to set mode
 function setMode(newMode)  {
+    changeMode(newMode)
     currentMode = newMode;
 }
 
@@ -92,22 +94,46 @@ function setupGridSystem(size) {
 
 //function to changeColor 
 function changeColor(e) {
-    console.log(`>>>> ${e.type}`)
+    console.log(currentColor,currentMode,currentSize)
 
     if (e.type === 'mouseover' && !mouseDown) return;
     if (currentMode === 'color') {
         e.target.style.backgroundColor = currentColor;
     } else if (currentMode === 'random') {
-        const randomR = Math.floor(math.random() * 256);
-        const randomG = Math.floor(math.random() * 256);
-        const randomB = Math.floor(math.random() * 256);
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
         e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
-    } else if (currentMode === 'eraser') {
-        e.target.style.backgroundColor == '#fefefe'
+    } else if (currentMode === 'erase') {
+        e.target.style.backgroundColor == eraseColor
     }
+}
+
+//function to change the mode
+function changeMode(newMode) {
+    if (currentMode === 'random') {
+        randomBtn.classList.remove('active')
+    } else if (currentMode === 'color') {
+        colorMode.classList.remove("active")
+    } else if (currentMode === 'erase') {
+        eraseBtn.classList.remove('active')
+    }
+
+
+    if (newMode === 'random') {
+        randomBtn.classList.add('active')
+    } else if (newMode === 'color') {
+        colorMode.classList.add('active')
+    } else if (newMode === 'erase') {   
+        eraseBtn.classList.add('active')
+    }
+
+
+ 
 }
 
 //onMount 
 window.onload = () => {
     setupGridSystem(defaultSize);
+    changeMode(defaultMode)
 }
